@@ -26,6 +26,11 @@ stage ('Deployment'){
 	
 stage('Notification'){
 	slackSend color: 'good', message: 'Deployment Sucessful'
+	emailext (
+		subject: "Job Completed(yeeted)",
+		body: "A great success!",
+		to: "tmchavez96@gmail.com"
+	)
 }
 	
 }
